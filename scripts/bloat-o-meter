@@ -15,7 +15,7 @@ if len(sys.argv) != 3:
 
 def getsizes(file):
     sym = {}
-    for l in os.popen("nm --size-sort " + file).readlines():
+    for l in os.popen(f"nm --size-sort {file}").readlines():
         size, type, name = l[:-1].split()
         if type in "tTdDbB":
             # function names begin with '.' on 64-bit powerpc
